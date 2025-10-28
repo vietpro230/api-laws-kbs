@@ -1,8 +1,5 @@
 FROM python:3.11-slim
 
-# Sử dụng slim để tránh musl/alpine issues với nhiều wheel
-FROM python:3.9-slim
-
 WORKDIR /code
 
 # giảm bộ nhớ dùng bởi pip và tắt kiểm tra phiên bản pip
