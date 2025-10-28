@@ -1,27 +1,28 @@
 FROM python:3.11-slim
 
-WORKDIR /code
+WORKDIR /app
 
-# giảm bộ nhớ dùng bởi pip và tắt kiểm tra phiên bản pip
 ENV PIP_NO_CACHE_DIR=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=1 \
     PYTHONUNBUFFERED=1
 
-# copy requirements trước để tận dụng cache layer
-COPY ./generation/requirements.txt /generation/requirements.txt
+# copy only requirements first to leverage cache
+COPY ./generation/requirements.txt /tmp/requirements.txt
 
-# nâng cấp pip & cài requirements (prefer binary để tránh build from source)
+# remove any 'torch' lines and install other deps first, then install torch from PyTorch CPU wheel
 RUN apt-get update \
- && apt-get install -y --no-install-recommends ca-certificates \
+ && apt-get install -y --no-install-recommends ca-certificates wget build-essential \
  && python -m pip install --upgrade pip setuptools wheel \
- && pip install --prefer-binary --no-cache-dir -r /generation/requirements.txt \
- && apt-get remove -y ca-certificates \
+ && sed -E '/^torch/Id' /tmp/requirements.txt > /tmp/reqs_no_torch.txt \
+ && pip install --prefer-binary --no-cache-dir -r /tmp/reqs_no_torch.txt \
+ && pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu torch \
+ && apt-get remove -y build-essential \
  && apt-get autoremove -y \
- && rm -rf /var/lib/apt/lists/*
+ && rm -rf /var/lib/apt/lists/* /tmp/*
 
-# copy toàn bộ thư mục generation và data
-COPY ./generation /generation
-COPY ./data /data
+# copy project and data
+COPY ./generation /app/generation
+COPY ./data /app/data
 
 EXPOSE 80
 
