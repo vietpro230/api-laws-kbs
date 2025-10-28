@@ -1,0 +1,5 @@
+.venv
+.env
+venv/
+generation/**/__pycache__/
+server/
