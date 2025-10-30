@@ -4,7 +4,12 @@ from langgraph.graph.message import add_messages
 
 
 class GenerationRequest(BaseModel):
-    prompt: str
+    # Use `query` as the field name because the route and service expect `body.query`.
+    # Keep backwards-compatibility by allowing `prompt` as an alias if callers send it.
+    query: str
+
+    class Config:
+        fields = {"query": {"alias": "prompt"}}
 
 class GenerationResponse(BaseModel):
     result: str

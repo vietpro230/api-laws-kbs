@@ -17,7 +17,7 @@ def generate(
     service: GenerationService = Depends(get_generation_service)
 ) -> GenerationResponse:
     try:
-        result = service.generate(body.prompt)
+        result = service.generate(body.query)
         return GenerationResponse(
             result=result.get('answer', 'No response generated'),
             status=result.get('status', 'error')

@@ -1,18 +1,11 @@
 import os
-import pandas as pd
-import numpy as np
-import torch
 from timeit import default_timer as timer
 from typing import List
 from dotenv import load_dotenv
 from .prompt_builder import DefaultPromptBuilder
 from .llm_caller import GeminiLLMCaller
-from .response_processor import ResponseProcessor
-from .citation_mapper import CitationMapper
-from .validator import Validator
-from sentence_transformers import SentenceTransformer, util
+from langchain.schema import HumanMessage
 from .search_relevant_laws import retrieve_relevant_laws
-from .build_graph import build_graph
 
 
 class GenerationService:
@@ -26,34 +19,23 @@ class GenerationService:
 
         # Initialize components
         self.prompt_builder = DefaultPromptBuilder()
-        self.llm_caller = GeminiLLMCaller(api_key).model
-        self.graph = build_graph(self.llm_caller)
-
+        # GeminiLLMCaller instance - use its generate() method
+        self.llm_caller = GeminiLLMCaller(api_key)
+        self.semantic_search = retrieve_relevant_laws
 
     def generate(self, query: str) -> str:
-        print("\n" + "=" * 50)
-        print(f"New conversation turn: {query}")
-        print("=" * 50)
+        data = self.semantic_search(
+            query=query,
+            n_resources_to_return=3,
+            print_time=True
+        )
+        prompt = self.prompt_builder.build_prompt(query, data)
+        # Use the LLM caller wrapper to generate answer
+        answer = self.llm_caller.generate(prompt)
 
-        # Initialize state
-        initial_state = {"messages": [{"role": "user", "content": query}]}
+        return {'answer': answer, 'status': 'success'}
 
-        # Process through graph
-        last_msg = None
-        for event in self.graph.stream(initial_state):
-            for key, value in event.items():
-                if isinstance(value, dict) and "messages" in value:
-                    last_msg = value["messages"][-1]
-                    if isinstance(last_msg, dict) and last_msg.get("role") == "assistant":
-                        print("\nAssistant:", last_msg["content"])
 
-        if not last_msg or not isinstance(last_msg, dict):
-            raise ValueError("No valid response generated")
-        print("\nFinal response generated.", last_msg.get("content", ""))
-        return {
-            "answer": last_msg.get("content", "No response generated"),
-            "status": "success"
-        }
 
 
 
