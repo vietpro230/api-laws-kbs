@@ -2,10 +2,7 @@ FROM python:3.11-slim
 
 WORKDIR /app/generation
 
-ENV PIP_NO_CACHE_DIR=1 \
-    PIP_DISABLE_PIP_VERSION_CHECK=1 \
-    PYTHONUNBUFFERED=1 \
-    PYTHONPATH=/app
+
 
 # copy only requirements first to leverage cache (file is in generation/)
 COPY ./generation/requirements.txt /app/requirements.txt
