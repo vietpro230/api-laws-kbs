@@ -1,4 +1,5 @@
 import logging
+from pathlib import Path
 import pandas as pd
 import numpy as np
 from timeit import default_timer as timer
@@ -10,13 +11,17 @@ if not logger.handlers:
     handler = logging.NullHandler()
     logger.addHandler(handler)
 
-# Load precomputed embeddings and text chunks
+# Resolve data path relative to this file so it works in Docker / different CWDs
+DATA_CSV = Path(__file__).resolve().parents[2] / "data" / "text_chunks_and_embeddings_df.csv"
+if not DATA_CSV.exists():
+    logger.error("Embeddings CSV not found at %s", DATA_CSV)
+    raise FileNotFoundError(f"Embeddings CSV not found at {DATA_CSV}")
+
 try:
-    text_chunks_and_embedding_df = pd.read_csv("../data/text_chunks_and_embeddings_df.csv")
-    logger.info("Loaded %d text chunks and embeddings.", len(text_chunks_and_embedding_df))
-except Exception as e:
-    logger.exception("Failed to load text_chunks_and_embeddings_df.csv")
-    # re-raise so caller is aware
+    text_chunks_and_embedding_df = pd.read_csv(str(DATA_CSV))
+    logger.info("Loaded %d text chunks and embeddings from %s.", len(text_chunks_and_embedding_df), DATA_CSV)
+except Exception:
+    logger.exception("Failed to load text_chunks_and_embeddings_df.csv from %s", DATA_CSV)
     raise
 
 # Convert embedding column back to np.array (expects format like "[0.1 0.2 ...]")
@@ -31,12 +36,16 @@ pages_and_chunks = text_chunks_and_embedding_df.to_dict(orient="records")
 _emb_list = text_chunks_and_embedding_df["embedding"].tolist()
 if len(_emb_list) == 0:
     embeddings_matrix = np.zeros((0, 0), dtype=np.float32)
+    logger.warning("Embeddings dataframe contained zero rows")
 else:
     try:
         embeddings_matrix = np.vstack(_emb_list).astype(np.float32)
     except Exception:
         logger.exception("Failed to build embeddings matrix from stored embeddings")
         raise
+
+# Cache sentence-transformers model after first load to avoid repeated downloads
+_SENTENCE_MODEL = None
 
 
 def _compute_cosine_scores(query_emb: np.ndarray, emb_matrix: np.ndarray) -> np.ndarray:
@@ -66,28 +75,35 @@ def retrieve_relevant_laws(
     """
 
     # Load sentence-transformers lazily to avoid module import errors at import time
+    global _SENTENCE_MODEL
     try:
         from sentence_transformers import SentenceTransformer  # local import
-    except Exception as e:
+    except Exception:
         logger.exception("sentence-transformers is not available; cannot embed query")
         raise ModuleNotFoundError(
             "sentence-transformers is required to embed queries. Install it (and torch) or use an external embedding service."
         )
 
-    # Load a small/appropriate model (this will download if not cached)
+    # Load model once
     try:
-        model = SentenceTransformer("huyydangg/DEk21_hcmute_embedding")
+        if _SENTENCE_MODEL is None:
+            logger.info("Loading SentenceTransformer model for the first time")
+            _SENTENCE_MODEL = SentenceTransformer("huyydangg/DEk21_hcmute_embedding")
+        model = _SENTENCE_MODEL
     except Exception:
         logger.exception("Failed to load SentenceTransformer model")
         raise
 
     # Embed the query
-    start_time = timer()
-    query_embedding = model.encode(query)
-    end_time = timer()
-
-    if print_time:
-        logger.info("Time taken to embed query: %.5f seconds.", end_time - start_time)
+    try:
+        start_time = timer()
+        query_embedding = model.encode(query)
+        end_time = timer()
+        if print_time:
+            logger.info("Time taken to embed query: %.5f seconds.", end_time - start_time)
+    except Exception:
+        logger.exception("Failed while encoding query")
+        raise
 
     # Compute similarity scores (cosine)
     scores = _compute_cosine_scores(query_embedding, embeddings_matrix)
