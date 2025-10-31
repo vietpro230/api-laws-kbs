@@ -1,0 +1,6 @@
+2025-11-01 00:19:26,424 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-01 00:19:31,439 | INFO | generation.pipeline | api_key loaded: True
+2025-11-01 00:19:31,799 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-01 00:19:31,801 | INFO | generation.pipeline | Starting generation for query: hello
+2025-11-01 00:19:36,408 | INFO | generation.pipeline | Semantic search returned 3 items
+2025-11-01 00:19:39,193 | INFO | generation.pipeline | LLM generated answer (len=395)

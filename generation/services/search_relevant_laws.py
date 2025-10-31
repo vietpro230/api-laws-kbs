@@ -1,10 +1,23 @@
+import logging
 import pandas as pd
 import numpy as np
 from timeit import default_timer as timer
-from sentence_transformers import SentenceTransformer
+
+# Module logger
+logger = logging.getLogger("generation.search_relevant_laws")
+if not logger.handlers:
+    # defer to parent handlers (configured by generation_pipeline) if present
+    handler = logging.NullHandler()
+    logger.addHandler(handler)
+
 # Load precomputed embeddings and text chunks
-text_chunks_and_embedding_df = pd.read_csv("../data/text_chunks_and_embeddings_df.csv")
-print(f"Loaded {len(text_chunks_and_embedding_df)} text chunks and embeddings.")
+try:
+    text_chunks_and_embedding_df = pd.read_csv("../data/text_chunks_and_embeddings_df.csv")
+    logger.info("Loaded %d text chunks and embeddings.", len(text_chunks_and_embedding_df))
+except Exception as e:
+    logger.exception("Failed to load text_chunks_and_embeddings_df.csv")
+    # re-raise so caller is aware
+    raise
 
 # Convert embedding column back to np.array (expects format like "[0.1 0.2 ...]")
 text_chunks_and_embedding_df["embedding"] = text_chunks_and_embedding_df["embedding"].apply(
@@ -19,7 +32,11 @@ _emb_list = text_chunks_and_embedding_df["embedding"].tolist()
 if len(_emb_list) == 0:
     embeddings_matrix = np.zeros((0, 0), dtype=np.float32)
 else:
-    embeddings_matrix = np.vstack(_emb_list).astype(np.float32)
+    try:
+        embeddings_matrix = np.vstack(_emb_list).astype(np.float32)
+    except Exception:
+        logger.exception("Failed to build embeddings matrix from stored embeddings")
+        raise
 
 
 def _compute_cosine_scores(query_emb: np.ndarray, emb_matrix: np.ndarray) -> np.ndarray:
@@ -48,8 +65,21 @@ def retrieve_relevant_laws(
     error explaining how to enable semantic search.
     """
 
+    # Load sentence-transformers lazily to avoid module import errors at import time
+    try:
+        from sentence_transformers import SentenceTransformer  # local import
+    except Exception as e:
+        logger.exception("sentence-transformers is not available; cannot embed query")
+        raise ModuleNotFoundError(
+            "sentence-transformers is required to embed queries. Install it (and torch) or use an external embedding service."
+        )
+
     # Load a small/appropriate model (this will download if not cached)
-    model = SentenceTransformer("huyydangg/DEk21_hcmute_embedding")
+    try:
+        model = SentenceTransformer("huyydangg/DEk21_hcmute_embedding")
+    except Exception:
+        logger.exception("Failed to load SentenceTransformer model")
+        raise
 
     # Embed the query
     start_time = timer()
@@ -57,12 +87,13 @@ def retrieve_relevant_laws(
     end_time = timer()
 
     if print_time:
-        print(f"[INFO] Time taken to embed query: {end_time - start_time:.5f} seconds.")
+        logger.info("Time taken to embed query: %.5f seconds.", end_time - start_time)
 
     # Compute similarity scores (cosine)
     scores = _compute_cosine_scores(query_embedding, embeddings_matrix)
 
     if scores.size == 0:
+        logger.info("No embeddings available to score; returning empty list")
         return []
 
     # Get top k indices
@@ -70,10 +101,14 @@ def retrieve_relevant_laws(
 
     data = []
     for idx in topk_idx:
-        data.append({
-            "score": float(scores[idx]),
-            "sentence_chunk": pages_and_chunks[int(idx)]["sentence_chunk"],
-            "page_number": pages_and_chunks[int(idx)]["page_number"]
-        })
+        try:
+            data.append({
+                "score": float(scores[idx]),
+                "sentence_chunk": pages_and_chunks[int(idx)]["sentence_chunk"],
+                "page_number": pages_and_chunks[int(idx)]["page_number"]
+            })
+        except Exception:
+            logger.exception("Failed to build data entry for index %s", idx)
 
+    logger.info("Returning %d relevant documents for query.", len(data))
     return data

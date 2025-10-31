@@ -1,4 +1,6 @@
 import os
+import logging
+import traceback
 from timeit import default_timer as timer
 from typing import List
 from dotenv import load_dotenv
@@ -7,33 +9,63 @@ from .llm_caller import GeminiLLMCaller
 from langchain.schema import HumanMessage
 from .search_relevant_laws import retrieve_relevant_laws
 
+# Logger for generation pipeline
+LOG_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "logs")
+os.makedirs(LOG_DIR, exist_ok=True)
+logger = logging.getLogger("generation.pipeline")
+if not logger.handlers:
+    logger.setLevel(logging.INFO)
+    fmt = logging.Formatter("%(asctime)s | %(levelname)s | %(name)s | %(message)s")
+    sh = logging.StreamHandler()
+    sh.setFormatter(fmt)
+    fh = logging.FileHandler(os.path.join(LOG_DIR, "generation_pipeline.log"), encoding="utf-8")
+    fh.setFormatter(fmt)
+    logger.addHandler(sh)
+    logger.addHandler(fh)
+logger.info("Logger configured for generation.pipeline")
+
 
 class GenerationService:
     def __init__(self):
-        # Load environment variables
-        load_dotenv(".env")
+        try:
+            # Load environment variables
+            load_dotenv(".env")
 
-        # Get API key from environment
-        api_key = os.getenv("GOOGLE_API_KEY")
-        print(f"api_key loaded: {api_key is not None}")
+            # Get API key from environment
+            api_key = os.getenv("GOOGLE_API_KEY")
+            logger.info("api_key loaded: %s", api_key is not None)
 
-        # Initialize components
-        self.prompt_builder = DefaultPromptBuilder()
-        # GeminiLLMCaller instance - use its generate() method
-        self.llm_caller = GeminiLLMCaller(api_key)
-        self.semantic_search = retrieve_relevant_laws
+            # Initialize components
+            self.prompt_builder = DefaultPromptBuilder()
+            self.llm_caller = GeminiLLMCaller(api_key)
+            self.semantic_search = retrieve_relevant_laws
+            logger.info("GenerationService initialized.")
+        except Exception as e:
+            logger.exception("Failed to initialize GenerationService: %s", str(e))
+            raise
 
     def generate(self, query: str) -> str:
-        data = self.semantic_search(
-            query=query,
-            n_resources_to_return=3,
-            print_time=True
-        )
-        prompt = self.prompt_builder.build_prompt(query, data)
-        # Use the LLM caller wrapper to generate answer
-        answer = self.llm_caller.generate(prompt)
+        try:
+            logger.info("Starting generation for query: %s", query)
+            data = self.semantic_search(
+                query=query,
+                n_resources_to_return=3,
+                print_time=True
+            )
+            logger.info("Semantic search returned %d items", len(data))
 
-        return {'answer': answer, 'status': 'success'}
+            prompt = self.prompt_builder.build_prompt(query, data)
+            logger.debug("Built prompt (len=%d)", len(prompt))
+
+            # Use the LLM caller wrapper to generate answer
+            answer = self.llm_caller.generate(prompt)
+            logger.info("LLM generated answer (len=%d)", len(answer) if isinstance(answer, str) else 0)
+
+            return {'answer': answer, 'status': 'success'}
+        except Exception as e:
+            tb = traceback.format_exc()
+            logger.error("Generation failed: %s\n%s", str(e), tb)
+            return {'answer': f'Error: {str(e)}', 'status': 'error', 'error': str(e), 'traceback': tb}
 
 
 

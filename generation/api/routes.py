@@ -1,6 +1,4 @@
 from fastapi import APIRouter, Depends, HTTPException
-from typing import Dict
-from pydantic import BaseModel
 from api.dependencies import get_api_key, get_generation_service
 from services.generation_pipeline import GenerationService
 from models.schemas import GenerationRequest, GenerationResponse

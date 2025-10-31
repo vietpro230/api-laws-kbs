@@ -10,7 +10,6 @@ class PromptBuilder(ABC):
 class DefaultPromptBuilder(PromptBuilder):
     def build_prompt(self, query: str, context: List[Dict]) -> str:
         try:
-            print("[INFO] Building prompt with provided context.", context)
             if not query or not isinstance(query, str):
                 raise ValueError("Query must be a non-empty string")
 
