@@ -47,13 +47,18 @@ class GenerationService:
     def generate(self, query: str) -> str:
         try:
             logger.info("Starting generation for query: %s", query)
+            logger.info("Exec`uting semantic search for query: '%s'", query)
+            start_time = timer()
             data = self.semantic_search(
                 query=query,
                 n_resources_to_return=3,
                 print_time=True
             )
-            logger.info("Semantic search returned %d items", len(data))
+            end_time = timer()
+            logger.info("Semantic search completed in %.2f seconds, returned %d items",
+                       end_time - start_time, len(data))
 
+            logger.info("Building prompt with retrieved data")
             prompt = self.prompt_builder.build_prompt(query, data)
             logger.debug("Built prompt (len=%d)", len(prompt))
 
