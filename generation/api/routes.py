@@ -16,6 +16,7 @@ def generate(
 ) -> GenerationResponse:
     try:
         result = service.generate(body.query)
+        print("resulut", result)
         return GenerationResponse(
             result=result.get('answer', 'No response generated'),
             status=result.get('status', 'error')
