@@ -5,10 +5,11 @@ FROM python:3.9
 WORKDIR /app
 
 
-COPY ./requirements.txt /generation/requirements.txt
+COPY ./generation/requirements.txt /app/generation/requirements.txt
 
 
-RUN pip install --no-cache-dir --upgrade -r /generation/requirements.txt
+
+RUN pip install --no-cache-dir --upgrade -r /app/generation/requirements.txt
 
 COPY ./generation app/generation
 COPY ./data app/data
