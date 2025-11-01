@@ -19,15 +19,12 @@ except Exception as e:
     # re-raise so caller is aware
     raise
 
-# Convert embedding column back to np.array (expects format like "[0.1 0.2 ...]")
 text_chunks_and_embedding_df["embedding"] = text_chunks_and_embedding_df["embedding"].apply(
     lambda x: np.fromstring(x.strip("[]"), sep=" ")
 )
 
-# Convert texts and embedding df to list of dicts for later lookup
 pages_and_chunks = text_chunks_and_embedding_df.to_dict(orient="records")
 
-# Build numpy matrix of embeddings for fast dot-product/cosine computations
 _emb_list = text_chunks_and_embedding_df["embedding"].tolist()
 if len(_emb_list) == 0:
     embeddings_matrix = np.zeros((0, 0), dtype=np.float32)

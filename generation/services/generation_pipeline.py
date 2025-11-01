@@ -2,11 +2,9 @@ import os
 import logging
 import traceback
 from timeit import default_timer as timer
-from typing import List
 from dotenv import load_dotenv
 from .prompt_builder import DefaultPromptBuilder
-from .llm_caller import GeminiLLMCaller
-from langchain.schema import HumanMessage
+from strategies.llm_strategy import GeminiLLMCaller
 from .search_relevant_laws import retrieve_relevant_laws
 
 # Logger for generation pipeline
