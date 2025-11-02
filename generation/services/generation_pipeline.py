@@ -72,24 +72,24 @@ class GenerationService:
             start_time = timer()
 
             # Semantic search
-            data = self.semantic_search(
-                query=query,
-                n_resources_to_return=3,
-                print_time=False
-            )
-            end_time = timer()
-            logger.info("Search completed in %.2f seconds", end_time - start_time)
+            # data = self.semantic_search(
+            #     query=query,
+            #     n_resources_to_return=3,
+            #     print_time=False
+            # )
+            # end_time = timer()
+            # logger.info("Search completed in %.2f seconds", end_time - start_time)
 
-            prompt = self.prompt_builder.build_prompt(query, data)
+            # prompt = self.prompt_builder.build_prompt(query, data)
 
             # Stream from LLM
             # Nếu llm_caller có method stream
             if hasattr(self.llm_caller, 'stream'):
-                for chunk in self.llm_caller.stream(prompt):
+                for chunk in self.llm_caller.stream(query):
                     yield chunk
             else:
                 # Fallback: fake stream nếu LLM không hỗ trợ
-                answer = self.llm_caller.generate(prompt)
+                answer = self.llm_caller.generate(query)
                 words = answer.split()
                 for word in words:
                     yield word + " "
