@@ -4,8 +4,9 @@ import traceback
 from timeit import default_timer as timer
 from dotenv import load_dotenv
 from .prompt_builder import DefaultPromptBuilder
-from strategies.llm_strategy import GeminiLLMCaller
+from strategies.gemini_stragety import GeminiLLMCaller
 from .search_relevant_laws import retrieve_relevant_laws
+from config.settings import settings
 
 # Logger for generation pipeline
 LOG_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "logs")
@@ -26,17 +27,13 @@ logger.info("Logger configured for generation.pipeline")
 class GenerationService:
     def __init__(self):
         try:
-            # Load environment variables
-            load_dotenv(".env")
-
-            # Get API key from environment
-            api_key = os.getenv("GOOGLE_API_KEY")
+            api_key = settings.GOOGLE_API_KEY
             logger.info("api_key loaded: %s", api_key is not None)
 
             # Initialize components
             self.prompt_builder = DefaultPromptBuilder()
             self.llm_caller = GeminiLLMCaller(api_key)
-            self.semantic_search = retrieve_relevant_laws
+            # self.semantic_search = retrieve_relevant_laws
             logger.info("GenerationService initialized.")
         except Exception as e:
             logger.exception("Failed to initialize GenerationService: %s", str(e))
@@ -45,23 +42,21 @@ class GenerationService:
     def generate(self, query: str) -> str:
         try:
             logger.info("Starting generation for query: %s", query)
-            logger.info("Exec`uting semantic search for query: '%s'", query)
             start_time = timer()
-            data = self.semantic_search(
-                query=query,
-                n_resources_to_return=3,
-                print_time=True
-            )
-            end_time = timer()
-            logger.info("Semantic search completed in %.2f seconds, returned %d items",
-                       end_time - start_time, len(data))
+            # data = self.semantic_search(
+            #     query=query,
+            #     n_resources_to_return=3,
+            #     print_time=True
+            # )
+            # end_time = timer()
+            # logger.info("Semantic search completed in %.2f seconds, returned %d items",
+            #            end_time - start_time, len(data))
 
-            logger.info("Building prompt with retrieved data")
-            prompt = self.prompt_builder.build_prompt(query, data)
-            logger.debug("Built prompt (len=%d)", len(prompt))
+            # logger.info("Building prompt with retrieved data")
+            # prompt = self.prompt_builder.build_prompt(query, data)
 
             # Use the LLM caller wrapper to generate answer
-            answer = self.llm_caller.generate(prompt)
+            answer = self.llm_caller.generate(query)
             logger.info("LLM generated answer (len=%d)", len(answer) if isinstance(answer, str) else 0)
 
             return {'answer': answer, 'status': 'success'}
@@ -70,7 +65,38 @@ class GenerationService:
             logger.error("Generation failed: %s\n%s", str(e), tb)
             return {'answer': f'Error: {str(e)}', 'status': 'error', 'error': str(e), 'traceback': tb}
 
+    def generate_stream(self, query: str):
+        """Generator function for streaming responses"""
+        try:
+            logger.info("Starting streaming generation for query: %s", query)
+            start_time = timer()
 
+            # Semantic search
+            data = self.semantic_search(
+                query=query,
+                n_resources_to_return=3,
+                print_time=False
+            )
+            end_time = timer()
+            logger.info("Search completed in %.2f seconds", end_time - start_time)
+
+            prompt = self.prompt_builder.build_prompt(query, data)
+
+            # Stream from LLM
+            # Nếu llm_caller có method stream
+            if hasattr(self.llm_caller, 'stream'):
+                for chunk in self.llm_caller.stream(prompt):
+                    yield chunk
+            else:
+                # Fallback: fake stream nếu LLM không hỗ trợ
+                answer = self.llm_caller.generate(prompt)
+                words = answer.split()
+                for word in words:
+                    yield word + " "
+
+        except Exception as e:
+            logger.error("Streaming generation failed: %s", str(e))
+            yield f"Error: {str(e)}"
 
 
 
