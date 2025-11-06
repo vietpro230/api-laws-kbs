@@ -13,15 +13,9 @@ class GeminiLLMCaller(LLMStrategy):
             model="google_genai:gemini-2.0-flash",
         )
 
-    def generate(self, prompt: str, system_prompt: Optional[str] = None) -> str:
+    def generate(self, prompt: str) -> str:
         try:
-            messages = []
-            if system_prompt:
-                messages.append(SystemMessage(content=system_prompt))
-            messages.append(HumanMessage(content=prompt))
-
-
-            result = self.model.invoke(messages)
+            result = self.model.invoke(prompt)
             if hasattr(result, "content") and isinstance(getattr(result, "content"), str):
                 return result.content
 

@@ -31,6 +31,7 @@ class GenerationService:
             logger.info("api_key loaded: %s", api_key is not None)
 
             # Initialize components
+            # khởi tạo builder
             self.prompt_builder = DefaultPromptBuilder()
             self.llm_caller = GeminiLLMCaller(api_key)
             # self.semantic_search = retrieve_relevant_laws
@@ -39,24 +40,11 @@ class GenerationService:
             logger.exception("Failed to initialize GenerationService: %s", str(e))
             raise
 
-    def generate(self, query: str) -> str:
+    def generate(self, query: str, custom_prompt: str) -> str:
         try:
             logger.info("Starting generation for query: %s", query)
-            start_time = timer()
-            # data = self.semantic_search(
-            #     query=query,
-            #     n_resources_to_return=3,
-            #     print_time=True
-            # )
-            # end_time = timer()
-            # logger.info("Semantic search completed in %.2f seconds, returned %d items",
-            #            end_time - start_time, len(data))
-
-            # logger.info("Building prompt with retrieved data")
-            # prompt = self.prompt_builder.build_prompt(query, data)
-
-            # Use the LLM caller wrapper to generate answer
-            answer = self.llm_caller.generate(query)
+            prompt = self.prompt_builder.build_prompt(query, custom_prompt)
+            answer = self.llm_caller.generate(prompt)
             logger.info("LLM generated answer (len=%d)", len(answer) if isinstance(answer, str) else 0)
 
             return {'answer': answer, 'status': 'success'}
@@ -71,18 +59,6 @@ class GenerationService:
             logger.info("Starting streaming generation for query: %s", query)
             start_time = timer()
 
-            # Semantic search
-            # data = self.semantic_search(
-            #     query=query,
-            #     n_resources_to_return=3,
-            #     print_time=False
-            # )
-            # end_time = timer()
-            # logger.info("Search completed in %.2f seconds", end_time - start_time)
-
-            # prompt = self.prompt_builder.build_prompt(query, data)
-
-            # Stream from LLM
             # Nếu llm_caller có method stream
             if hasattr(self.llm_caller, 'stream'):
                 for chunk in self.llm_caller.stream(query):

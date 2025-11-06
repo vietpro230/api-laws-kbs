@@ -4,3 +4,921 @@
 2025-11-01 00:19:31,801 | INFO | generation.pipeline | Starting generation for query: hello
 2025-11-01 00:19:36,408 | INFO | generation.pipeline | Semantic search returned 3 items
 2025-11-01 00:19:39,193 | INFO | generation.pipeline | LLM generated answer (len=395)
+2025-11-02 21:11:11,419 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-02 21:11:58,587 | INFO | generation.pipeline | api_key loaded: True
+2025-11-02 21:11:59,172 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-02 21:11:59,173 | INFO | generation.pipeline | Starting streaming generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-04 20:54:55,994 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 17:41:29,054 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 17:42:43,087 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 17:42:49,938 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 17:42:54,763 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 17:42:54,764 | INFO | generation.pipeline | Starting streaming generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-05 17:43:12,853 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 17:43:12,855 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 17:43:12,856 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-05 17:43:25,458 | INFO | generation.pipeline | LLM generated answer (len=4962)
+2025-11-05 17:44:16,815 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 17:44:18,482 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 17:44:18,873 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 17:44:18,879 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-05 17:44:27,923 | INFO | generation.pipeline | LLM generated answer (len=3819)
+2025-11-05 17:45:14,094 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 17:45:14,101 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 17:45:14,101 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-05 17:45:23,580 | INFO | generation.pipeline | LLM generated answer (len=4348)
+2025-11-05 17:48:19,214 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 17:48:21,041 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 17:48:21,430 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 17:49:12,422 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 17:49:14,442 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 17:49:14,805 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 17:49:39,194 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 17:49:41,430 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 17:49:41,810 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 17:49:41,810 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-05 17:49:42,888 | INFO | generation.pipeline | LLM generated answer (len=109)
+2025-11-05 17:49:52,935 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 17:49:52,943 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 17:49:52,943 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-05 17:50:04,977 | INFO | generation.pipeline | LLM generated answer (len=5357)
+2025-11-05 17:52:21,584 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 17:52:22,904 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 17:52:23,273 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 17:52:23,273 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-05 17:52:37,800 | INFO | generation.pipeline | LLM generated answer (len=4708)
+2025-11-05 17:54:34,159 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 17:54:34,169 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 17:54:34,169 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-05 18:35:56,554 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:36:32,421 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:36:34,491 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 18:36:34,491 | ERROR | generation.pipeline | Failed to initialize GenerationService: DefaultPromptBuilder.build_prompt() missing 3 required positional arguments: 'query', 'custom_prompt', and 'context'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 34, in __init__
+    self.prompt_builder = DefaultPromptBuilder().build_prompt()
+TypeError: DefaultPromptBuilder.build_prompt() missing 3 required positional arguments: 'query', 'custom_prompt', and 'context'
+2025-11-05 18:38:01,158 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:50:03,634 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:50:23,627 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:50:25,024 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 18:50:30,534 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 18:50:30,541 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-05 18:50:30,541 | INFO | generation.pipeline | LLM generated answer (len=65)
+2025-11-05 18:51:31,278 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:51:33,595 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 18:51:34,093 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 18:51:34,094 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-05 18:51:34,095 | INFO | generation.pipeline | LLM generated answer (len=113)
+2025-11-05 18:52:18,633 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:52:31,583 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:52:52,134 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:52:56,210 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:53:27,130 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:53:33,962 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:53:56,608 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:54:03,586 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:54:08,015 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:54:20,897 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:54:33,203 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:54:37,586 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:54:41,665 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:54:54,408 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:55:01,196 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:55:10,841 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:55:17,867 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:55:27,646 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:55:31,999 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:55:32,015 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 18:55:32,443 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 18:55:32,450 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-05 18:55:32,451 | ERROR | generation.pipeline | Generation failed: DefaultPromptBuilder.build_prompt() missing 1 required positional argument: 'context'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt)
+TypeError: DefaultPromptBuilder.build_prompt() missing 1 required positional argument: 'context'
+
+2025-11-05 18:55:58,165 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:55:58,196 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 18:55:58,610 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 18:55:58,610 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-05 18:55:58,610 | ERROR | generation.pipeline | Generation failed: Context must be a non-empty list of law chunks
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 17, in build_prompt
+    raise ValueError("Context must be a non-empty list of law chunks")
+ValueError: Context must be a non-empty list of law chunks
+
+2025-11-05 18:56:32,382 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:56:32,400 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 18:56:32,865 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 18:56:32,866 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-05 18:56:32,867 | ERROR | generation.pipeline | Generation failed: Context must be a non-empty list of law chunks
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 17, in build_prompt
+    raise ValueError("Context must be a non-empty list of law chunks")
+ValueError: Context must be a non-empty list of law chunks
+
+2025-11-05 18:56:50,242 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 18:56:50,245 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 18:56:50,246 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-05 18:56:50,257 | ERROR | generation.pipeline | Generation failed: Context must be a non-empty list of law chunks
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 17, in build_prompt
+    #     raise ValueError("Context must be a non-empty list of law chunks")
+ValueError: Context must be a non-empty list of law chunks
+
+2025-11-05 18:56:56,014 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:57:08,372 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:57:12,563 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:57:22,178 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:57:31,533 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:57:43,941 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:57:48,086 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:58:03,274 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:58:05,760 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 18:58:06,178 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 18:58:06,178 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-05 18:58:06,191 | ERROR | generation.pipeline | Generation failed: name 'formatted_chunks' is not defined
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 34, in build_prompt
+    # context_str = "\n\n".join(formatted_chunks)
+NameError: name 'formatted_chunks' is not defined
+
+2025-11-05 18:58:10,294 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:58:23,210 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-05 18:58:25,739 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 18:58:26,210 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 18:58:26,217 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-05 18:58:28,455 | INFO | generation.pipeline | LLM generated answer (len=555)
+2025-11-05 18:58:52,176 | INFO | generation.pipeline | api_key loaded: True
+2025-11-05 18:58:52,182 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-05 18:58:52,182 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-05 18:58:53,502 | INFO | generation.pipeline | LLM generated answer (len=108)
+2025-11-06 19:21:05,876 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 19:21:11,103 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 19:21:14,135 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 19:21:18,962 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 19:21:18,963 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 19:21:20,694 | INFO | generation.pipeline | LLM generated answer (len=118)
+2025-11-06 19:21:29,162 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 19:21:29,170 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 19:21:29,170 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 19:21:29,170 | ERROR | generation.pipeline | Generation failed: module 'os' has no attribute 'loadtxt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 20, in build_prompt
+    prompt = os.loadtxt("generation/prompts/default_prompt.txt").format(
+AttributeError: module 'os' has no attribute 'loadtxt'
+
+2025-11-06 20:02:00,349 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:02:18,714 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:03:31,778 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:04:15,686 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:04:23,416 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:05:11,313 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:06:27,892 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:06:35,257 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:12:20,245 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:12:21,503 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 20:12:21,954 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 20:12:21,954 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 20:12:21,954 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: 'generation/prompts/default_prompt.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 26, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 15, in load_default_prompt
+    with open("generation/prompts/default_prompt.txt", "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'generation/prompts/default_prompt.txt'
+
+2025-11-06 20:13:05,024 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:13:06,024 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 20:13:06,439 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 20:13:06,439 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 20:13:06,439 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: 'config/prompts/default.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 26, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 15, in load_default_prompt
+    with open("config/prompts/default.txt", "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'config/prompts/default.txt'
+
+2025-11-06 20:13:41,601 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:13:42,763 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 20:13:43,166 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 20:13:43,166 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 20:13:43,167 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: '../config/prompts/default.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 26, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 15, in load_default_prompt
+    with open("../config/prompts/default.txt", "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '../config/prompts/default.txt'
+
+2025-11-06 20:13:56,429 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:14:03,298 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:14:03,313 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 20:14:03,871 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 20:14:03,872 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 20:14:03,875 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: './config/prompts/default.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 26, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 15, in load_default_prompt
+    with open("./config/prompts/default.txt", "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: './config/prompts/default.txt'
+
+2025-11-06 20:15:46,124 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:17:32,323 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:17:34,141 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 20:17:34,526 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 20:17:34,530 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 20:17:34,531 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: 'generation\\config\\prompt\\default.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 26, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 15, in load_default_prompt
+    with open("generation\config\prompt\default.txt", "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'generation\\config\\prompt\\default.txt'
+
+2025-11-06 20:17:49,314 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:17:49,329 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 20:17:49,850 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 20:17:49,851 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 20:17:49,852 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: 'generation/config/prompt/default.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 26, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 15, in load_default_prompt
+    with open("generation/config/prompt/default.txt", "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'generation/config/prompt/default.txt'
+
+2025-11-06 20:18:09,253 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:18:12,993 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:19:02,125 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 20:19:02,604 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 20:19:02,604 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 20:19:02,604 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: '../config/prompt/default.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 26, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 15, in load_default_prompt
+    with open("../config/prompt/default.txt", "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '../config/prompt/default.txt'
+
+2025-11-06 20:21:23,587 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:21:41,623 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:22:26,525 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:22:26,546 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 20:22:26,990 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 20:22:26,990 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 20:22:27,025 | ERROR | generation.pipeline | Generation failed: 'query'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 40, in build_prompt
+    return PromptTemplate.from_template(prompt).format(context=context)
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\Generation\law_KBS\generation\venv\lib\site-packages\langchain_core\prompts\prompt.py", line 201, in format
+    return DEFAULT_FORMATTER_MAPPING[self.template_format](self.template, **kwargs)
+  File "C:\Users\congv\AppData\Local\Programs\Python\Python310\lib\string.py", line 161, in format
+    return self.vformat(format_string, args, kwargs)
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\Generation\law_KBS\generation\venv\lib\site-packages\langchain_core\utils\formatting.py", line 33, in vformat
+    return super().vformat(format_string, args, kwargs)
+  File "C:\Users\congv\AppData\Local\Programs\Python\Python310\lib\string.py", line 165, in vformat
+    result, _ = self._vformat(format_string, args, kwargs, used_args, 2)
+  File "C:\Users\congv\AppData\Local\Programs\Python\Python310\lib\string.py", line 205, in _vformat
+    obj, arg_used = self.get_field(field_name, args, kwargs)
+  File "C:\Users\congv\AppData\Local\Programs\Python\Python310\lib\string.py", line 270, in get_field
+    obj = self.get_value(first, args, kwargs)
+  File "C:\Users\congv\AppData\Local\Programs\Python\Python310\lib\string.py", line 227, in get_value
+    return kwargs[key]
+KeyError: 'query'
+
+2025-11-06 20:23:09,404 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:23:13,072 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:23:43,528 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:24:10,868 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:24:36,403 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:25:08,978 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:25:15,222 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:25:29,214 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 20:25:29,672 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 20:25:29,672 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 20:25:29,691 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: '../config/prompt/default.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 26, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 15, in load_default_prompt
+    with open("default.txt", "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '../config/prompt/default.txt'
+
+2025-11-06 20:25:34,058 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:25:37,582 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 20:25:37,956 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 20:25:37,956 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 20:25:37,956 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: 'default.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 26, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 15, in load_default_prompt
+    with open("default.txt", "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'default.txt'
+
+2025-11-06 20:26:01,310 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 20:26:01,317 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 20:26:01,317 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 20:26:01,323 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: 'default.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 26, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 15, in load_default_prompt
+    with open("default.txt", "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'default.txt'
+
+2025-11-06 20:26:05,567 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:26:05,580 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 20:26:06,088 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 20:26:06,088 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 20:26:06,094 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: 'default.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 26, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 15, in load_default_prompt
+    with open("default.txt", "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'default.txt'
+
+2025-11-06 20:47:34,369 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:47:38,299 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:47:44,646 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:47:51,036 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:47:51,050 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 20:47:52,501 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 20:47:52,501 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 20:47:52,501 | ERROR | generation.pipeline | Generation failed: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 30, in build_prompt
+    prompt += f"""
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+2025-11-06 20:48:11,430 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:48:15,424 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:48:24,585 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:48:24,737 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 20:48:25,234 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 20:48:25,235 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 20:48:25,253 | ERROR | generation.pipeline | Generation failed: expected str, got NoneType
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 32, in build_prompt
+    return PromptTemplate.from_template(prompt).format(context=context)
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\Generation\law_KBS\generation\venv\lib\site-packages\langchain_core\prompts\prompt.py", line 304, in from_template
+    input_variables = get_template_variables(template, template_format)
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\Generation\law_KBS\generation\venv\lib\site-packages\langchain_core\prompts\string.py", line 263, in get_template_variables
+    v for _, v, _, _ in Formatter().parse(template) if v is not None
+  File "C:\Users\congv\AppData\Local\Programs\Python\Python310\lib\string.py", line 259, in parse
+    return _string.formatter_parser(format_string)
+TypeError: expected str, got NoneType
+
+2025-11-06 20:48:40,482 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:48:49,277 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 20:48:49,812 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 20:48:49,812 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 20:48:49,812 | ERROR | generation.pipeline | Generation failed: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 30, in build_prompt
+    prompt += f"""
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+2025-11-06 20:53:54,529 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:53:54,541 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 20:53:54,979 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 20:53:54,980 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 20:54:57,690 | INFO | generation.pipeline | LLM generated answer (len=75)
+2025-11-06 20:55:55,156 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:57:18,314 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:58:36,746 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 20:59:41,973 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:00:33,500 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:00:37,444 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:00:37,455 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:00:37,871 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 21:00:37,872 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 21:00:37,872 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: 'default.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 26, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 15, in load_default_prompt
+    with open("default.txt", "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'default.txt'
+
+2025-11-06 21:00:45,688 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:00:45,692 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 21:00:45,692 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 21:00:45,692 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: 'default.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 26, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 15, in load_default_prompt
+    with open("default.txt", "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'default.txt'
+
+2025-11-06 21:00:47,872 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:00:47,872 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 21:00:47,872 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 21:00:47,878 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: 'default.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 26, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 15, in load_default_prompt
+    with open("default.txt", "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'default.txt'
+
+2025-11-06 21:01:07,489 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:22:43,759 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:22:44,175 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 21:22:44,175 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 21:22:44,175 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: 'default.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 27, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 16, in load_default_prompt
+    with open("default.txt", "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'default.txt'
+
+2025-11-06 21:24:25,529 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:24:25,542 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:24:25,958 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 21:24:25,958 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 21:24:25,958 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: 'D:\\Sinh Vien\\HK9\\Công nghệ tri thức nâng cao\\law_KBS\\law_KBS\\generation\\services\\..\\prompts\\default_prompt.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 27, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 16, in load_default_prompt
+    with open(file_path , "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Sinh Vien\\HK9\\Công nghệ tri thức nâng cao\\law_KBS\\law_KBS\\generation\\services\\..\\prompts\\default_prompt.txt'
+
+2025-11-06 21:25:40,916 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:25:54,540 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:26:03,397 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:26:21,615 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:26:25,288 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:26:48,249 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:26:54,462 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:26:58,324 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:26:58,336 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:26:58,754 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 21:26:58,754 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 21:26:58,754 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: 'generation/config/prompt/default.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 27, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 16, in load_default_prompt
+    with open(file_path, "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'generation/config/prompt/default.txt'
+
+2025-11-06 21:27:01,720 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:27:01,720 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 21:27:01,725 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 21:27:01,726 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: 'generation/config/prompt/default.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 27, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 16, in load_default_prompt
+    with open(file_path, "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'generation/config/prompt/default.txt'
+
+2025-11-06 21:27:30,989 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:27:31,010 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:27:31,429 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 21:27:31,430 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 21:27:31,432 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: '../config/prompt/default.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 27, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 16, in load_default_prompt
+    with open(file_path, "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '../config/prompt/default.txt'
+
+2025-11-06 21:28:37,511 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:28:48,358 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:29:18,153 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:29:18,576 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 21:29:18,576 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 21:29:18,576 | ERROR | generation.pipeline | Generation failed: [Errno 2] No such file or directory: '../config/prompt/default.txt'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 27, in build_prompt
+    prompt = self.load_default_prompt()
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 16, in load_default_prompt
+    with open(file_path, "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '../config/prompt/default.txt'
+
+2025-11-06 21:31:16,935 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:31:45,258 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:31:45,491 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:31:45,903 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 21:31:45,904 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 21:31:45,905 | ERROR | generation.pipeline | Generation failed: DefaultPromptBuilder.build_prompt() takes from 2 to 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+TypeError: DefaultPromptBuilder.build_prompt() takes from 2 to 3 positional arguments but 4 were given
+
+2025-11-06 21:32:03,802 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:32:54,481 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:32:58,490 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:32:58,491 | ERROR | generation.pipeline | Failed to initialize GenerationService: Can't instantiate abstract class DefaultPromptBuilder with abstract method build_prompt
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 35, in __init__
+    self.prompt_builder = DefaultPromptBuilder()
+TypeError: Can't instantiate abstract class DefaultPromptBuilder with abstract method build_prompt
+2025-11-06 21:34:12,681 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:34:14,334 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:34:17,486 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 21:34:17,487 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 21:34:17,488 | ERROR | generation.pipeline | Generation failed: DefaultPromptBuilder.build_prompt() takes from 2 to 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt, [])
+TypeError: DefaultPromptBuilder.build_prompt() takes from 2 to 3 positional arguments but 4 were given
+
+2025-11-06 21:35:11,163 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:35:11,174 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:35:11,514 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 21:35:11,514 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 21:36:06,053 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:36:09,435 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:36:09,845 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 21:36:09,851 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 21:36:12,353 | INFO | generation.pipeline | LLM generated answer (len=557)
+2025-11-06 21:36:36,394 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:36:36,400 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 21:36:36,401 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 21:36:37,613 | INFO | generation.pipeline | LLM generated answer (len=110)
+2025-11-06 21:40:52,953 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:41:10,900 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:41:47,289 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:42:00,817 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:42:20,405 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:42:28,948 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:44:48,863 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:45:23,195 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:45:27,013 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:45:34,049 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:45:37,880 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:45:46,579 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:45:50,451 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:45:54,227 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:46:19,288 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:46:25,532 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:46:29,407 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:46:33,259 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:46:36,990 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:46:40,744 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:46:56,539 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:47:00,386 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:47:04,205 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:47:08,066 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:47:11,922 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:47:15,816 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:47:19,469 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:47:54,657 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:48:00,926 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:48:00,936 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:48:01,302 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 21:48:01,302 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 21:48:03,180 | INFO | generation.pipeline | LLM generated answer (len=404)
+2025-11-06 21:49:11,779 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:49:20,258 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:49:42,120 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:49:48,407 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:49:54,472 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:50:07,653 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:51:19,324 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:52:08,805 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:52:45,634 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:52:49,274 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:53:33,377 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:53:39,666 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:53:48,676 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:53:49,104 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 21:53:49,105 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 21:53:50,142 | INFO | generation.pipeline | LLM generated answer (len=57)
+2025-11-06 21:53:57,405 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:53:57,407 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 21:53:57,408 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 21:53:58,724 | INFO | generation.pipeline | LLM generated answer (len=56)
+2025-11-06 21:54:12,454 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:54:19,001 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 21:54:19,418 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 21:54:19,418 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 21:54:21,937 | INFO | generation.pipeline | LLM generated answer (len=718)
+2025-11-06 21:55:51,684 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:55:55,417 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:56:15,637 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:56:44,609 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:56:55,571 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:57:04,111 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:57:07,919 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:57:16,401 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:57:25,556 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:57:46,691 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:58:00,032 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:58:06,947 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:59:53,243 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 21:59:59,514 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:00:05,674 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:00:09,349 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:03:07,573 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:03:16,135 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:03:19,936 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:03:41,565 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:05:10,185 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:05:23,333 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:05:50,633 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:06:03,557 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:06:12,025 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:07:03,280 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:08:58,210 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:09:01,800 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:09:46,491 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:10:18,493 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:10:27,537 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:10:53,190 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:10:56,909 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:11:05,379 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:16:25,534 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:16:26,673 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:16:27,124 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:16:27,124 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 22:16:29,659 | INFO | generation.pipeline | LLM generated answer (len=622)
+2025-11-06 22:16:44,902 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:16:44,908 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:16:44,908 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 22:16:46,262 | INFO | generation.pipeline | LLM generated answer (len=47)
+2025-11-06 22:17:10,539 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:17:43,713 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:18:15,570 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:18:16,734 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:18:17,233 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:18:17,233 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 22:18:18,823 | INFO | generation.pipeline | LLM generated answer (len=47)
+2025-11-06 22:18:41,206 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:18:41,212 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:18:41,212 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 22:18:43,274 | INFO | generation.pipeline | LLM generated answer (len=369)
+2025-11-06 22:22:58,053 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:22:58,059 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:22:58,060 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 22:22:59,219 | INFO | generation.pipeline | LLM generated answer (len=186)
+2025-11-06 22:23:13,720 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:23:13,726 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:23:13,726 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 22:23:14,739 | INFO | generation.pipeline | LLM generated answer (len=51)
+2025-11-06 22:25:04,550 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:25:08,611 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:26:35,749 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:26:36,262 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:26:36,264 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 22:26:37,305 | INFO | generation.pipeline | LLM generated answer (len=48)
+2025-11-06 22:26:43,069 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:26:43,075 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:26:43,075 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì?
+2025-11-06 22:26:45,062 | INFO | generation.pipeline | LLM generated answer (len=441)
+2025-11-06 22:27:05,922 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:27:05,929 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:27:05,929 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì trong thương mại điện tử?
+2025-11-06 22:27:07,797 | INFO | generation.pipeline | LLM generated answer (len=499)
+2025-11-06 22:27:18,422 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:27:18,429 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:27:18,429 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì trong thương mại điện tử thông tin khách hàng?
+2025-11-06 22:27:20,721 | INFO | generation.pipeline | LLM generated answer (len=669)
+2025-11-06 22:27:41,137 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:27:41,143 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:27:41,144 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì trong thương mại điện tử thông tin khách hàng?
+2025-11-06 22:27:42,859 | INFO | generation.pipeline | LLM generated answer (len=398)
+2025-11-06 22:27:50,312 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:27:50,317 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:27:50,317 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì trong thương mại điện tử thông tin khách hàng?
+2025-11-06 22:27:52,838 | INFO | generation.pipeline | LLM generated answer (len=622)
+2025-11-06 22:28:35,986 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:28:36,000 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:28:36,493 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:28:36,493 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì trong thương mại điện tử thông tin khách hàng?
+2025-11-06 22:28:38,572 | INFO | generation.pipeline | LLM generated answer (len=648)
+2025-11-06 22:28:48,447 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:28:48,448 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:28:48,448 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì trong thương mại điện tử thông tin khách hàng?
+2025-11-06 22:28:49,448 | INFO | generation.pipeline | LLM generated answer (len=61)
+2025-11-06 22:29:03,156 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:29:03,162 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:29:03,163 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì trong thương mại điện tử thông tin khách hàng?
+2025-11-06 22:29:04,308 | INFO | generation.pipeline | LLM generated answer (len=71)
+2025-11-06 22:29:15,614 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:29:15,614 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:29:15,614 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì trong thương mại điện tử thông tin khách hàng?
+2025-11-06 22:29:16,524 | INFO | generation.pipeline | LLM generated answer (len=60)
+2025-11-06 22:29:49,731 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:29:49,742 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:29:50,231 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:29:50,231 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì trong thương mại điện tử thông tin khách hàng?
+2025-11-06 22:29:51,648 | INFO | generation.pipeline | LLM generated answer (len=187)
+2025-11-06 22:30:25,112 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:31:11,739 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:31:15,375 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:31:31,410 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:31:31,429 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:31:31,848 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:31:31,849 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì trong thương mại điện tử thông tin khách hàng?
+2025-11-06 22:31:33,180 | INFO | generation.pipeline | LLM generated answer (len=82)
+2025-11-06 22:31:52,459 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:32:05,624 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:32:30,819 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:32:34,763 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:32:34,779 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:32:35,157 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:32:35,157 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân có quy định gì trong thương mại điện tử thông tin khách hàng?
+2025-11-06 22:32:38,151 | INFO | generation.pipeline | LLM generated answer (len=672)
+2025-11-06 22:33:41,893 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:33:41,899 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:33:41,899 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân
+2025-11-06 22:33:43,223 | INFO | generation.pipeline | LLM generated answer (len=233)
+2025-11-06 22:34:04,941 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:34:04,947 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:34:04,948 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân
+2025-11-06 22:34:06,883 | INFO | generation.pipeline | LLM generated answer (len=329)
+2025-11-06 22:34:17,427 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:34:17,427 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:34:17,427 | INFO | generation.pipeline | Starting generation for query: bạn có quan tâm đến bảo vệ dữ liệu cá nhân trên mạng
+2025-11-06 22:34:18,754 | INFO | generation.pipeline | LLM generated answer (len=352)
+2025-11-06 22:34:28,808 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:34:28,815 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:34:28,815 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân trên mạng
+2025-11-06 22:34:30,287 | INFO | generation.pipeline | LLM generated answer (len=350)
+2025-11-06 22:37:39,699 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:37:45,936 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:37:51,297 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:37:51,682 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:37:51,682 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân trên mạng
+2025-11-06 22:37:51,682 | INFO | generation.pipeline | Built prompt (len=586)
+2025-11-06 22:37:53,361 | INFO | generation.pipeline | LLM generated answer (len=160)
+2025-11-06 22:38:13,218 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:38:13,221 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:38:13,221 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân 
+2025-11-06 22:38:13,222 | INFO | generation.pipeline | Built prompt (len=577)
+2025-11-06 22:38:14,611 | INFO | generation.pipeline | LLM generated answer (len=159)
+2025-11-06 22:40:52,501 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:41:24,003 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:41:27,660 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:41:40,715 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:43:26,662 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:43:30,321 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:43:41,152 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:43:41,165 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:43:41,511 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:45:13,109 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:45:14,802 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:45:15,190 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:45:15,190 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân 
+2025-11-06 22:45:15,210 | ERROR | generation.pipeline | Generation failed: 'context_str'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt)
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 29, in build_prompt
+    final_prompt = prompt.format(query=query)
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\Generation\law_KBS\generation\venv\lib\site-packages\langchain_core\prompts\prompt.py", line 201, in format
+    return DEFAULT_FORMATTER_MAPPING[self.template_format](self.template, **kwargs)
+  File "C:\Users\congv\AppData\Local\Programs\Python\Python310\lib\string.py", line 161, in format
+    return self.vformat(format_string, args, kwargs)
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\Generation\law_KBS\generation\venv\lib\site-packages\langchain_core\utils\formatting.py", line 33, in vformat
+    return super().vformat(format_string, args, kwargs)
+  File "C:\Users\congv\AppData\Local\Programs\Python\Python310\lib\string.py", line 165, in vformat
+    result, _ = self._vformat(format_string, args, kwargs, used_args, 2)
+  File "C:\Users\congv\AppData\Local\Programs\Python\Python310\lib\string.py", line 205, in _vformat
+    obj, arg_used = self.get_field(field_name, args, kwargs)
+  File "C:\Users\congv\AppData\Local\Programs\Python\Python310\lib\string.py", line 270, in get_field
+    obj = self.get_value(first, args, kwargs)
+  File "C:\Users\congv\AppData\Local\Programs\Python\Python310\lib\string.py", line 227, in get_value
+    return kwargs[key]
+KeyError: 'context_str'
+
+2025-11-06 22:45:32,154 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:45:32,162 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:45:32,163 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân 
+2025-11-06 22:45:32,175 | ERROR | generation.pipeline | Generation failed: 'page'
+Traceback (most recent call last):
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\generation_pipeline.py", line 46, in generate
+    prompt = self.prompt_builder.build_prompt(query, custom_prompt)
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\law_KBS\law_KBS\generation\services\prompt_builder.py", line 29, in build_prompt
+    final_prompt = prompt.format(query=query)
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\Generation\law_KBS\generation\venv\lib\site-packages\langchain_core\prompts\prompt.py", line 201, in format
+    return DEFAULT_FORMATTER_MAPPING[self.template_format](self.template, **kwargs)
+  File "C:\Users\congv\AppData\Local\Programs\Python\Python310\lib\string.py", line 161, in format
+    return self.vformat(format_string, args, kwargs)
+  File "D:\Sinh Vien\HK9\Công nghệ tri thức nâng cao\Generation\law_KBS\generation\venv\lib\site-packages\langchain_core\utils\formatting.py", line 33, in vformat
+    return super().vformat(format_string, args, kwargs)
+  File "C:\Users\congv\AppData\Local\Programs\Python\Python310\lib\string.py", line 165, in vformat
+    result, _ = self._vformat(format_string, args, kwargs, used_args, 2)
+  File "C:\Users\congv\AppData\Local\Programs\Python\Python310\lib\string.py", line 205, in _vformat
+    obj, arg_used = self.get_field(field_name, args, kwargs)
+  File "C:\Users\congv\AppData\Local\Programs\Python\Python310\lib\string.py", line 270, in get_field
+    obj = self.get_value(first, args, kwargs)
+  File "C:\Users\congv\AppData\Local\Programs\Python\Python310\lib\string.py", line 227, in get_value
+    return kwargs[key]
+KeyError: 'page'
+
+2025-11-06 22:45:39,115 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:45:39,119 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:45:39,120 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân 
+2025-11-06 22:45:40,896 | INFO | generation.pipeline | LLM generated answer (len=471)
+2025-11-06 22:46:20,326 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:46:20,333 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:46:20,333 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân 
+2025-11-06 22:46:22,410 | INFO | generation.pipeline | LLM generated answer (len=649)
+2025-11-06 22:46:44,069 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:46:44,076 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:46:44,076 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân 
+2025-11-06 22:46:45,881 | INFO | generation.pipeline | LLM generated answer (len=500)
+2025-11-06 22:47:24,582 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:47:24,582 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:47:24,582 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân 
+2025-11-06 22:47:26,285 | INFO | generation.pipeline | LLM generated answer (len=164)
+2025-11-06 22:47:36,048 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:47:36,048 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:47:36,054 | INFO | generation.pipeline | Starting generation for query: 1+1 
+2025-11-06 22:47:37,086 | INFO | generation.pipeline | LLM generated answer (len=104)
+2025-11-06 22:47:52,236 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:47:52,236 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:47:52,236 | INFO | generation.pipeline | Starting generation for query: 1+1 
+2025-11-06 22:47:53,356 | INFO | generation.pipeline | LLM generated answer (len=92)
+2025-11-06 22:48:17,525 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:48:28,824 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:48:32,692 | INFO | generation.pipeline | Logger configured for generation.pipeline
+2025-11-06 22:48:32,714 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:48:33,178 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:48:33,178 | INFO | generation.pipeline | Starting generation for query: 1+1 
+2025-11-06 22:48:33,921 | INFO | generation.pipeline | LLM generated answer (len=1)
+2025-11-06 22:48:40,928 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:48:40,934 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:48:40,935 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân 
+2025-11-06 22:48:42,316 | INFO | generation.pipeline | LLM generated answer (len=155)
+2025-11-06 22:48:59,601 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:48:59,608 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:48:59,608 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân 
+2025-11-06 22:49:00,886 | INFO | generation.pipeline | LLM generated answer (len=135)
+2025-11-06 22:49:11,573 | INFO | generation.pipeline | api_key loaded: True
+2025-11-06 22:49:11,573 | INFO | generation.pipeline | GenerationService initialized.
+2025-11-06 22:49:11,579 | INFO | generation.pipeline | Starting generation for query: Tôi muốn biết điều khoản về bảo vệ cá nhân 
+2025-11-06 22:49:13,177 | INFO | generation.pipeline | LLM generated answer (len=289)

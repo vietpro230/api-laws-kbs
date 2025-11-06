@@ -1,53 +1,38 @@
 """Prompt building strategies"""
 from abc import ABC, abstractmethod
 from typing import List, Dict, Optional
+from langchain.prompts import PromptTemplate
+from pathlib import Path
 
 class PromptBuilder(ABC):
     @abstractmethod
-    def build_prompt(self, query: str, context: List[Dict]) -> str:
+    def build_prompt(self, query: str, custom_prompt: Optional[str] = None) -> str:
         pass
 
+
 class DefaultPromptBuilder(PromptBuilder):
-    def build_prompt(self, query: str, context: List[Dict]) -> str:
-        try:
-            if not query or not isinstance(query, str):
-                raise ValueError("Query must be a non-empty string")
 
-            if not context or not isinstance(context, list):
-                raise ValueError("Context must be a non-empty list of law chunks")
+    def __init__(self, default_prompt_path: str = "config/prompt/default.txt"):
+        self.default_prompt_path = Path(default_prompt_path)
 
-            # Format each context chunk with its page number
-            formatted_chunks = []
-            for chunk in context:
-                if not isinstance(chunk, dict):
-                    continue
+    def load_default_prompt(self) -> str:
+        if not self.default_prompt_path.exists():
+            raise FileNotFoundError(f"Default prompt file not found at {self.default_prompt_path}")
+        with open(self.default_prompt_path, "r", encoding="utf-8") as f:
+            return f.read()
 
-                text = chunk.get("sentence_chunk", "")
-                page = chunk.get("page_number", "")
-                if text and page:
-                    formatted_chunks.append(f"[Page {page}] {text}")
+    def build_prompt(self, query: str, custom_prompt: Optional[str] = None) -> str:
+            try:
+                if custom_prompt:
+                    prompt_template = custom_prompt + "\n\nCâu hỏi:\n{query}"
+                else:
+                    prompt_template = self.load_default_prompt()
 
-            if not formatted_chunks:
-                raise ValueError("No valid law chunks found in context")
+                prompt = PromptTemplate.from_template(prompt_template)
+                final_prompt = prompt.format(query=query)
 
-            # Build the complete prompt
-            context_str = "\n\n".join(formatted_chunks)
-            prompt = f"""Bạn là một trợ lý trả lời câu hỏi pháp luật; chỉ sử dụng các đoạn trích luật được cung cấp bên dưới.
+                return final_prompt.strip()
 
-                    Ngữ cảnh (đoạn trích luật):
-                    {context_str}
-
-                    Câu hỏi:
-                    {query}
-
-                    Hướng dẫn:
-                    1. Bạn là 1 chuyên gia pháp luật Việt Nam.
-                    2. Nếu câu hỏi không rõ ràng hoặc thiếu thông tin, trước tiên hãy yêu cầu làm rõ thay vì đoán.
-                    3. Với những câu hỏi rõ ràng, trả lời ngắn gọn, chính xác và mạch lạc.
-                    4. Nếu câu hỏi liên quan đến pháp luật Việt Nam, căn cứ hoàn toàn vào văn bản pháp luật hiện hành có trong ngữ cảnh
-                    5. Luôn trích dẫn các trang cụ thể từ ngữ cảnh bằng định dạng {page} trong câu trả lời của bạn."""
-            return prompt
-
-        except Exception as e:
-            print(f"[ERROR] Failed to build prompt: {str(e)}")
-            raise
+            except Exception as e:
+                print(f"[ERROR] Failed to build prompt: {e}")
+                raise
